@@ -1,3 +1,3 @@
 # angular2_test
 
-Angular2 Test Run -- promises based 
+Angular2 Test Run -- promise based 
