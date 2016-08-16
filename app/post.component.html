@@ -1,0 +1,30 @@
+  <h2>{{title}}</h2>
+  <h2>My Posts
+
+  <!-- Adding New Post -->
+  <div class="error" *ngIf="error">{{error}}</div>
+    <button (click)="addPost()">Add New Post</button>
+  <div *ngIf="addingPost">
+    <my-post-detail (close)="close($event)"></my-post-detail>
+  </div>
+  </h2>
+
+
+  <ul class="posts">
+
+<!-- Looping through Posts -->
+  <li *ngFor="let post of array_posts"
+  (click)="onSelect(post)"
+  [class.selected]="post === selectedPost"
+  >
+    <span class="post-element">
+        <!-- Delete Selected Post -->
+      <button class="delete-button" (click)="deletePost(post, $event)">Delete</button>
+      </span>
+
+     <span class="badge">{{post.id}} </span> 
+      {{post.username}} 
+  </li>
+  </ul>
+
+
